@@ -1,0 +1,73 @@
+# AI役割定義ファイル
+# ホロライブUS輸入ビジネスプロジェクト
+
+project: "hololive-us-import-business"
+description: "ホロライブ限定商品のアメリカ買い付け→日本販売ビジネスプロジェクト"
+
+# 基本設定
+complexity: "standard"
+priority: "ux-first"
+
+# AI役割定義
+roles:
+  ux-ai:
+    responsibility: "プロジェクト統括・ビジネス戦略・市場調査・実行計画策定"
+    input: "市場調査データ・イベント情報・競合分析"
+    output: 
+      - "ビジネス計画書"
+      - "実行スケジュール"
+      - "収支計算・投資計画"
+      - "リスク分析レポート"
+      - "競合調査・価格戦略"
+    tools: ["市場調査", "財務分析", "プロジェクト管理", "GitHub"]
+    authority: "leader"
+    decisions:
+      - "投資判断・予算配分"
+      - "実行タイミング決定"
+      - "リスク許容度設定"
+    
+  backend-ai:
+    responsibility: "データ分析・価格追跡・自動化システム・販売管理"
+    input: "転売サイトデータ・価格情報・在庫状況"
+    output:
+      - "価格追跡システム"
+      - "販売データ分析"
+      - "自動発注・在庫管理"
+      - "顧客管理システム"
+    tools: ["Python", "データベース", "API連携", "スクレイピング"]
+    activation: "データ分析・自動化が必要な段階"
+
+# プロジェクト管理
+workflow:
+  repository_setup:
+    1: "リポジトリ作成（main）"
+    2: "develop ブランチ派生"
+    3: "基本README + ai-roles.yaml配置"
+  
+  development:
+    1: "UX-AI統括・判断"
+    2: "develop で主要作業"
+    3: "段階別ブランチ派生（準備・実行・販売）"
+    4: "コミットログで進捗管理"
+  
+  collaboration:
+    - "計画段階: UX-AI単独、戦略策定"
+    - "実行段階: 必要時Backend-AI連携"
+    - "販売段階: フルシステム運用"
+
+# GitHub設定
+github:
+  repository: "Rioto3/hololive-us-import-business"
+  main-branch: "main"
+  work-branch: "develop"
+  feature-prefix: "feature/"
+  
+# ビジネス設定
+business:
+  target_events:
+    - "hololive night 2025（2025年7月5日）"
+    - "将来のMLB×ホロライブコラボ"
+  target_products:
+    - "限定トレーディングカード"
+    - "コラボグッズ・フード&ドリンク"
+  market: "日本国内転売市場"
